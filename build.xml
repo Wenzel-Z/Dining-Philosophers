@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+    build.xml
+    Ant script for CS364 Program #2
+
+    Zachary Wenzel
+-->
+<project name="hw2" default="compile" basedir=".">
+    <property name="src.dir" location ="src"/>
+    <property name="build.dir" location="build"/>
+
+        <target name="clean" description="delete build artifacts">
+            <delete dir="${build.dir}" />
+        </target>
+
+        <target name="init">
+            <mkdir dir="${build.dir}" />
+        </target>
+
+    <target name="compile"
+        description="compile project source code"
+        depends="clean, init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" />
+    </target>
+</project>
